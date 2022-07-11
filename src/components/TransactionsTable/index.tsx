@@ -7,6 +7,8 @@ import { Container } from "./styles";
 export function TransactionTable() {
   const { transactions } = useContext(TransactionContext);
 
+  console.log(transactions)
+
   return (
     <Container>
       <table>
@@ -30,8 +32,12 @@ export function TransactionTable() {
                 }).format(transaction.amount)}
               </td>
               <td>{transaction.category}</td>
-              <td>{new Intl.DateTimeFormat('pt-BR')
-                .format(new Date(transaction.createdAt))}</td>
+              <td>
+                {
+                  new Intl.DateTimeFormat('pt-BR')
+                    .format(new Date(transaction.createdAt))
+                }
+              </td>
             </tr>
           )
           )}

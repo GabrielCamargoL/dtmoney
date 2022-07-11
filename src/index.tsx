@@ -5,8 +5,7 @@ import { App } from './App';
 
 createServer({
   models: {
-    transaction: Model,
-
+    transaction: Model
   },
 
   seeds(server) {
@@ -44,7 +43,6 @@ createServer({
 
       return schema.create('transaction', data);
     });
-
   }
 });
 
